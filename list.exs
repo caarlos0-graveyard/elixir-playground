@@ -84,3 +84,12 @@ end
 IO.inspect MyList.flatten([ [1], [ 2, [3] ] , [4]]) # [1,2,3,4]
 IO.inspect MyList.flatten([ [], [ [], [3] ] , [4]]) # [3,4]
 
+#################################3
+
+
+(1..10) |> Enum.map(&1*&1) |> Enum.filter(fn x -> rem(x, 2) == 0 end)
+# (1..10) is a 1 to 10 range will feed
+# Enum.map(&1*&1), which is a shorthand to Enum.map(fn x -> x * x end)
+# Enum.map result will be [1,4,9,16,25,36,49,64,81,100], which will feed the
+# Enum.filter, which will remove all odd results, given the final result:
+# [4,16,36,64,100]
